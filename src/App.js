@@ -15,7 +15,7 @@ function App() {
     newTab[3] = newTab[3] + 1;
     setTab(newTab);
   };
-
+  // console.log(tab);
   return (
     <div className="App">
       <Header />
@@ -26,9 +26,28 @@ function App() {
           </button>
         </div>
         <div className="counters">
-          <Counter state={tab} setState={setTab} />
-
-          {/* <Counter state={tab} setState={setTab} /> */}
+          {tab[3] === 1 ? (
+            <Counter state={tab} setState={setTab} counter={0} />
+          ) : (
+            ""
+          )}
+          {tab[3] === 2 ? (
+            <div className="counters">
+              <Counter state={tab} setState={setTab} counter={0} />{" "}
+              <Counter state={tab} setState={setTab} counter={1} />
+            </div>
+          ) : (
+            ""
+          )}
+          {tab[3] === 3 ? (
+            <div className="counters">
+              <Counter state={tab} setState={setTab} counter={0} />{" "}
+              <Counter state={tab} setState={setTab} counter={1} />
+              <Counter state={tab} setState={setTab} counter={2} />
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>
