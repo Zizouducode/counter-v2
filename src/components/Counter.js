@@ -1,5 +1,5 @@
 const Counter = ({ state, setState, counter }) => {
-  console.log(counter);
+  //   console.log(counter);
   const handleChangePlus = () => {
     const newTab = [...state];
     newTab[counter] = newTab[counter] + 1;

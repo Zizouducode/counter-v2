@@ -15,7 +15,7 @@ function App() {
     newTab.push(0);
     setTab(newTab);
   };
-  console.log(tab);
+  // console.log(tab);
   return (
     <div className="App">
       <Header />
@@ -27,13 +27,17 @@ function App() {
             </button>
           </div>
         ) : null}
-        {tab.map((elem, index) => {
-          return (
-            <div className="counters" key={index}>
-              <Counter state={tab} setState={setTab} counter={index} />
-            </div>
-          );
-        })}
+        <div className="counters">
+          {tab.map((elem, index) => {
+            return (
+              <div className="counters" key={index}>
+                {console.log(elem)}
+                <Counter state={tab} setState={setTab} counter={index} />
+              </div>
+            );
+          })}
+        </div>
+
         {/* <div className="counters">
           {tab[3] === 1 ? (
             <Counter state={tab} setState={setTab} counter={0} />
