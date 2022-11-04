@@ -20,11 +20,13 @@ function App() {
     <div className="App">
       <Header />
       <div className="container">
-        <div>
-          <button onClick={addCounter} className="add-counter">
-            Add Counter
-          </button>
-        </div>
+        {tab[3] < 3 ? (
+          <div>
+            <button onClick={addCounter} className="add-counter">
+              Add Counter
+            </button>
+          </div>
+        ) : null}
         <div className="counters">
           {tab[3] === 1 ? (
             <Counter state={tab} setState={setTab} counter={0} />
