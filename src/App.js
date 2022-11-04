@@ -27,8 +27,17 @@ function App() {
             </button>
           </div>
         ) : null}
-        {tab.map((elem) => {
-          return <Counter state={tab} setState={setTab} />;
+        {tab.map((elem, index) => {
+          return (
+            <div>
+              <Counter
+                key={index}
+                state={tab}
+                setState={setTab}
+                counter={index}
+              />
+            </div>
+          );
         })}
         {/* <div className="counters">
           {tab[3] === 1 ? (
