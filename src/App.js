@@ -8,26 +8,29 @@ import Counter from "./components/Counter";
 library.add(faStopwatch20);
 
 function App() {
-  const [tab, setTab] = useState([0, 0, 0, 1]);
+  const [tab, setTab] = useState([0]);
 
   const addCounter = () => {
     const newTab = [...tab];
-    newTab[3] = newTab[3] + 1;
+    newTab.push(0);
     setTab(newTab);
   };
-  // console.log(tab);
+  console.log(tab);
   return (
     <div className="App">
       <Header />
       <div className="container">
-        {tab[3] < 3 ? (
+        {tab.length < 3 ? (
           <div>
             <button onClick={addCounter} className="add-counter">
               Add Counter
             </button>
           </div>
         ) : null}
-        <div className="counters">
+        {tab.map((elem) => {
+          return <Counter state={tab} setState={setTab} />;
+        })}
+        {/* <div className="counters">
           {tab[3] === 1 ? (
             <Counter state={tab} setState={setTab} counter={0} />
           ) : (
@@ -50,7 +53,7 @@ function App() {
           ) : (
             ""
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
