@@ -29,13 +29,8 @@ function App() {
         ) : null}
         {tab.map((elem, index) => {
           return (
-            <div>
-              <Counter
-                key={index}
-                state={tab}
-                setState={setTab}
-                counter={index}
-              />
+            <div className="counters" key={index}>
+              <Counter state={tab} setState={setTab} counter={index} />
             </div>
           );
         })}
